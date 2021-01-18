@@ -10,8 +10,23 @@
      <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap/dist/css/bootstrap.min.css"> 
      <link rel="stylesheet" href="/CSS/style.css">
 </head>
-
 <body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>  
+              <a class="navbar-brand mr-auto" href="#">Ristorante Con Fusion</a>
+              <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="aboutus.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>    
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -24,7 +39,11 @@
     </header>
 
     <div class="container">
-        <div class="row row-header">
+        <div class="row">
+            <ol class="col-12 breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ol>
             <div>
                <h3>About Us</h3>
                <hr>
@@ -53,7 +72,6 @@
                 <p class=" d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, <em>Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!</em></p>
             </div>
        </div>
-
     </div>
 
     <footer class="footer">
@@ -62,7 +80,7 @@
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html"></a></li>
                         <li><a href="aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
