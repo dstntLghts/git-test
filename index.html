@@ -57,13 +57,18 @@
                     </div>    
                 </div>
             </div> 
-            <div class="row row-content align-items-center">
+            <div class="row row-content flex-row-reverse">
                 <div class="col-12 col-sm-4 col-md-3">
                     <h3>This Months's Promotions</h3>
                 </div>
-                <div class="col col-sm col-md">
-                    <h2>Weekend Grand Buffet</h2>
-                    <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+                <div class="col col-sm order-sm-first col-md">
+                    <div class="media">
+                        <div class="media-body">
+                            <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
+                            <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
+                        </div>
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="/Bootstrap4/conFusion/buffet.png">    
+                    </div>    
                 </div>
             </div>
             <div class="row row-content align-items-center">
@@ -78,6 +83,47 @@
                             <h4>Executive Chef</h4>
                             <p class="d-none d-sm-block">Award winning three-star Micheling chef with wide international experience having worked closely with whos-who in the culinary world, he specialized in creating mouthwatering indo-italain fusion experiences.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-sm">
+                <div class="card">
+                    <h3 class="card-header reservationform">Reserve a table</h3>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                               <label for="Number" class="col-10 col-md-2 col-form-label">Number of Guests</label>
+                               <div> 
+                                   <input type="radio" id="Choice1" name="contact" value="Number">
+                                   <label for="Choice1">1</label>
+                                   <input type="radio" id="Choice2" name="contact" value="Number">
+                                   <label for="Choice2"">2</label>
+                                   <input type="radio" id="Choice3" name="contact" value="Number">
+                                   <label for="Choice3">3</label>
+                                   <input type="radio" id="Choice4" name="contact" value="Number">
+                                   <label for="Choice4">4</label>
+                                   <input type="radio" id="Choice5" name="contact" value="Number">
+                                   <label for="hoice5">5</label>
+                                   <input type="radio" id="Choice6" name="contact" value="Number">
+                                   <label for="Choice6">6</label>
+                              </div>
+                            </div>  
+                            <div class="form-group row">
+                                <label for="date" class="col-md-2 col-form-label">Date and Time</label>
+                                  <div class="col-md-2">
+                                      <input type="date" class="form-control" id="resdate" name="resdate" placeholder="Date">
+                                  </div>
+                                  <div class="col-md-2">
+                                   <input type="time" class="form-control" id="restime" name="restime" placeholder="Time">
+                            </div>
+                             <div class="form-goup row">
+                                 <div class="offset-md-2 col-md-10">
+                                     <button type="submit" class="btn btn-primary">
+                                         Reserve
+                                     </button>
+                                 </div>
+                            </div>
+                        </form>      
                     </div>
                 </div>
             </div>
