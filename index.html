@@ -39,8 +39,10 @@
                     <div class="col-12 col-sm align-self-center">
                         <img src="/Bootstrap4/conFusion/logo.png" class="img-fluid">
                     </div>
-                    <div class="col-2 col-md-2">
-                        <button type="submit" class="btn reservationbutton"><a href="#myreservation">Reserve a Table</a></button>
+                    <div class="col-12 col-sm aligh-self-center">
+                        <button type="submit" class="btn btn-block nav-link btn-warning">
+                            <a data-toggle="tooltip" data-html="true" title="Or call us at <br><strong>+852 12345678</strong>" data-placement="bottom"
+                                 href="#myreservation">Reserve Table</a></button>
                     </div>
                 </div>
             </div>
@@ -93,32 +95,34 @@
                 <div class="card col-8 col-sm">
                     <h3 class="card-header reservationform" id="myreservation">Reserve a Table</h3>
                     <form>
-                        <div class="form-group row">
-                            <label for="Number">Number of Guests</label>
-                            <div> 
-                                <input type="radio" id="Choice1" name="contact" value="Number">
-                                <label for="Choice1">1</label>
-                                <input type="radio" id="Choice2" name="contact" value="Number">
-                                <label for="Choice2"">2</label>
-                                <input type="radio" id="Choice3" name="contact" value="Number">
-                                <label for="Choice3">3</label>
-                                <input type="radio" id="Choice4" name="contact" value="Number">
-                                <label for="Choice4">4</label>
-                                <input type="radio" id="Choice5" name="contact" value="Number">
-                                <label for="hoice5">5</label>
-                                <input type="radio" id="Choice6" name="contact" value="Number">
-                                <label for="Choice6">6</label>
+                        <div class="card-body">
+                            <div class="row form-group">
+                                <label for="Number"> Number of Guests: </label>
+                                <div> 
+                                    <input type="radio" id="Choice1" name="contact" value="Number">
+                                    <label for="Choice1">1</label>
+                                    <input type="radio" id="Choice2" name="contact" value="Number">
+                                    <label for="Choice2"">2</label>
+                                    <input type="radio" id="Choice3" name="contact" value="Number">
+                                    <label for="Choice3">3</label>
+                                    <input type="radio" id="Choice4" name="contact" value="Number">
+                                    <label for="Choice4">4</label>
+                                    <input type="radio" id="Choice5" name="contact" value="Number">
+                                    <label for="hoice5">5</label>
+                                    <input type="radio" id="Choice6" name="contact" value="Number">
+                                    <label for="Choice6">6</label>
+                                </div>
                             </div>
-                        </div>  
-                        <div class="form-group row">
+                        </div>      
+                        <div class="row form-group ">
                             <label for="date" class="col-md-2 col-form-label">Date and Time</label>
                                 <div class="col-md-2">
                                     <input type="date" class="form-control" id="resdate" name="resdate" placeholder="Date">
                                 </div>
                                 <div class="col-md-2">
-                                <input type="time" class="form-control" id="restime" name="restime" placeholder="Time">
-                        </div>
-                            <div class="form-goup row">
+                                    <input type="time" class="form-control" id="restime" name="restime" placeholder="Time">
+                                </div> 
+                            <div class="row form-group ">
                                 <div class="col-md-2">
                                     <button type="submit" class="btn btn-primary">
                                         Reserve
@@ -175,5 +179,10 @@
         <script src="Bootstrap4/conFusion/node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
     </body>
 </html>
