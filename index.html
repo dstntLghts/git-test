@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head> 
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="/CSS/style.css">
     </head>
+
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">
@@ -25,14 +27,12 @@
                             <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
                             <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                         </ul>
-                        <span class="navbar-text">
-                            <a data-toggle="modal" data-target="#loginModal">
-                                <span class="fa fa-sign-in"></span>Login
-                            </a>
-                        </span>
+                        <button type="submit" class="col-1 btn btn-block btn-secondary nav-link">
+                            <span class="navbar-text"> <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span>Login</a>
+                        </button>
                     </div>
             </div>
-        </nav>    
+        </nav> 
 
         <div id="loginModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg" role="content">
@@ -48,7 +48,7 @@
                             <div class="form-row">
                                 <div class="form-group col-sm-4">
                                     <label class="sr-only" for="exampleInputEmail"></label>
-                                    <input type="email" class="form-control" placeholder="Enter email">
+                                    <input type="email" class="form-control form-control-sm mr-1" placeholder="Enter email">
                                 </div>
                                 <div class="form-group col-sm-4">
                                     <label class="sr-only" for="exampleInputPassword">password</label>
@@ -70,6 +70,7 @@
                 </div>
             </div>
         </div>
+
         <header class="jumbotron">
             <div class="container">
                 <div class="row row-header">
@@ -82,13 +83,78 @@
                     </div>
                     <div class="col-12 col-sm aligh-self-center">
                         <button type="submit" class="btn btn-block nav-link btn-warning">
-                            <a data-toggle="tooltip" data-html="true" title="Or call us at <br><strong>+852 12345678</strong>" data-placement="bottom"
-                                 href="#myreservation">Reserve Table</a></button>
+                            <span class="navbar-text"> <a data-toggle="modal" data-target="#reserveModal"><span class="fa"></span>Reserve Table</a>
+                        </button>
                     </div>
                 </div>
             </div>
         </header>
 
+        <div id="reserveModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reserve a Table</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row"> 
+                                <div class="form-group col-sm-4>
+                                    <label for="Number">Number of Guests:</label>
+                                    <div>
+                                        <input type="radio" id="Choice1" name="contact" value="Number">
+                                        <label for="choice1"> 1</label>
+                                        <input type="radio" id="Choice2" name="contact" value="Number">
+                                        <label for="choice2"> 2</label>
+                                        <input type="radio" id="Choice3" name="contact" value="Number">
+                                        <label for="choice3"> 3</label>
+                                        <input type="radio" id="Choice4" name="contact" value="Number">
+                                        <label for="choice4"> 4</label>
+                                        <input type="radio" id="Choice5" name="contact" value="Number">
+                                        <label for="choice5"> 5</label>
+                                        <input type="radio" id="Choice6" name="contact" value="Number">
+                                        <label for="choice6"> 6</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">    
+                                <div class="form-group col-sm-4">
+                                    <label for="section">Section:</label>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking</label>
+                                        <label class="btn btn-secondary">
+                                        <input type="radio" name="options" id="option2" autocomplete="off"> Smoking </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">    
+                                <div class="form-group col-sm-4">
+                                    <label for="section">Date and Time:</label>
+                                    <div class="form-group row">
+                                        <label for="firstname" class="col-md-2 col-form-label"> Date</label>
+                                        <div class="col-md-10">
+                                            <input type="date" class="form-control" id="resdate" name="resdate" placeholder="Date">
+                                        </div>
+                                        <label for="firstname" class="col-md-2 col-form-label"> Time</label>
+                                        <div class="col-md-10">
+                                            <input type="time" class="form-control" id="restime" name="restime" placeholder="Time">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                            </div>
+                        </form>
+                    </div>   
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row row-content">
                 <div class="col">
@@ -121,10 +187,8 @@
                                 <li data-target="#mycarousel" data-slide-to="1"></li>
                                 <li data-target="#mycarousel" data-slide-to="2"></li>
                             </ol>
-                            <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span>
-                            </a>
-                            <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span>
-                            </a>
+                            <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                            <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
                         </div>  
                     </div>
                 </div>
@@ -170,48 +234,6 @@
                             <p class="d-none d-sm-block">Award winning three-star Micheling chef with wide international experience having worked closely with whos-who in the culinary world, he specialized in creating mouthwatering indo-italain fusion experiences.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row row-content">
-                <div class="card col-8 col-sm">
-                    <h3 class="card-header reservationform" id="myreservation">Reserve a Table</h3>
-                    <form>
-                        <div class="card-body">
-                            <div class="row form-group">
-                                <label for="Number"> Number of Guests: </label>
-                                <div> 
-                                    <input type="radio" id="Choice1" name="contact" value="Number">
-                                    <label for="Choice1">1</label>
-                                    <input type="radio" id="Choice2" name="contact" value="Number">
-                                    <label for="Choice2"">2</label>
-                                    <input type="radio" id="Choice3" name="contact" value="Number">
-                                    <label for="Choice3">3</label>
-                                    <input type="radio" id="Choice4" name="contact" value="Number">
-                                    <label for="Choice4">4</label>
-                                    <input type="radio" id="Choice5" name="contact" value="Number">
-                                    <label for="hoice5">5</label>
-                                    <input type="radio" id="Choice6" name="contact" value="Number">
-                                    <label for="Choice6">6</label>
-                                </div>
-                            </div>
-                        </div>      
-                        <div class="row form-group ">
-                            <label for="date" class="col-md-2 col-form-label">Date and Time</label>
-                                <div class="col-md-2">
-                                    <input type="date" class="form-control" id="resdate" name="resdate" placeholder="Date">
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="time" class="form-control" id="restime" name="restime" placeholder="Time">
-                                </div> 
-                            <div class="row form-group ">
-                                <div class="col-md-2">
-                                    <button type="submit" class="btn btn-primary">
-                                        Reserve
-                                    </button>
-                                </div>
-                             </div>
-                        </div>     
-                    </form>     
                 </div>
             </div>
         </div>
@@ -260,10 +282,5 @@
         <script src="Bootstrap4/conFusion/node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
     </body>
 </html>
