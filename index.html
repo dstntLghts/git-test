@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap/dist/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
     </head>
 
     <body>
@@ -27,8 +27,8 @@
                             <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Menu</a></li>
                             <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                         </ul>
-                        <button type="submit" class="col-1 btn btn-block btn-secondary nav-link">
-                            <span class="navbar-text"> <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span>Login</a>
+                        <button type="submit" id="loginButton" class="col-1 btn btn-block btn-secondary nav-link">
+                            <span class="navbar-text"> <a><span class="fa fa-sign-in"></span>Login</a>
                         </button>
                     </div>
             </div>
@@ -82,8 +82,8 @@
                         <img src="/Bootstrap4/conFusion/logo.png" class="img-fluid">
                     </div>
                     <div class="col-12 col-sm aligh-self-center">
-                        <button type="submit" class="btn btn-block nav-link btn-warning">
-                            <span class="navbar-text"> <a data-toggle="modal" data-target="#reserveModal"><span class="fa"></span>Reserve Table</a>
+                        <button type="submit" id="reserveButton" class="btn btn-block nav-link btn-warning">
+                            <span class="navbar-text"> <a><span class="fa"></span>Reserve Table</a>
                         </button>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
             $(document).ready(function() {
                 $('#mycarousel').carousel({ interval: 2000 });
                 $('#carouselButton').click(function() {
-                    if ($('#carouselButton').children('span').hasClass('fa-pause'))  {
+                    if ($('#carouselButton').children('span').hasClass('fa-pause')) {
                         $('#mycarousel').carousel('pause');
                         $('#carouselButton').children('span').removeClass('fa-pause');
                         $('#carouselButton').children('span').addClass('fa-play');
@@ -300,6 +300,8 @@
                         $('#carouselButton').children('span').addClass('fa-pause');
                     }
                 });
+                $('#loginButton').click(function() { $('#loginModal').modal('show');});
+                $('#reserveButton').click(function() { $('#reserveModal').modal('show');});
             });
         </script>
     </body>

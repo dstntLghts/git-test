@@ -4,9 +4,9 @@
   "description": "\"This is a test directory to learn Git and Node\"",
   "main": "index.js",
   "scripts": {
-    "start":"npm run lite",
+    "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite":"lite-server",
+    "lite": "lite-server",
     "scss": "node-sass -o css/ css/"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dstntLghts/git-test#readme",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "node-sass": "^4.7.2"
   }
 }
