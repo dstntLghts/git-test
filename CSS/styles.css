@@ -58,3 +58,12 @@ body{
   position: absolute;
   bottom: 0px
 }
+
+.modal-header {
+  background: #512DA8;
+  color: floralwhite;
+}
+
+.modal-body {
+  background: #d1c4e9;
+}
