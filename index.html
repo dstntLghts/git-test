@@ -16,9 +16,6 @@
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>  
                   <a class="navbar-brand mr-auto" href="#"><img src="/Bootstrap4/conFusion/logo.png" height="30" width="40"></a>
                   <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
@@ -28,7 +25,7 @@
                             <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                         </ul>
                         <button type="submit" id="loginButton" class="col-1 btn btn-block btn-secondary nav-link">
-                            <span class="navbar-text"> <a><span class="fa fa-sign-in"></span>Login</a>
+                            <a><span class="fa fa-sign-in"></span>Login</a>
                         </button>
                     </div>
             </div>
@@ -155,6 +152,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row row-content">
                 <div class="col">
@@ -189,13 +187,12 @@
                             </ol>
                             <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
                             <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
-                            <button class="btn btn-danger btn-sm" id="carouselButton">
-                                <span id='carousel-button-icon' class="fa fa-pause"></span>
-                            </button>
-                        </div>  
+                            <button id="carouselButton" class="btn btn-danger btn-sm"><span id="carousel-button-icon" class="fa fa-pause"></span></button>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="row row-content align-items-center">
                 <div class="col-12 col-sm-4 order-sm-last col-md-3">
                     <h3> Our lipsmacking culinary creations</h3>
@@ -286,18 +283,18 @@
         <script src="Bootstrap4/conFusion/node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script>
-            $(document).ready(function() {
-                $('#mycarousel').carousel({ interval: 2000 });
-                $('#carouselButton').click(function() {
-                    if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                        $('#mycarousel').carousel('pause');
-                        $('#carouselButton').children('span').removeClass('fa-pause');
-                        $('#carouselButton').children('span').addClass('fa-play');
+            $(document).ready(function(){
+                $("#mycarousel").carousel( { interval: 2000 } );
+                $("#carouselButton").click(function() {
+                    if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                        $("#mycarousel").carousel('pause');
+                        $("#carouselButton").children("span").removeClass('fa-pause');
+                        $("#carouselButton").children("span").addClass('fa-play');
                     }
-                    else if($('#carouselButton').children('span').hasClass('fa-play')) {
-                        $('#mycarousel').carousel('cycle');
-                        $('#carouselButton').children('span').removeClass('fa-play');
-                        $('#carouselButton').children('span').addClass('fa-pause');
+                    else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                        $("#mycarousel").carousel('cycle');
+                        $("#carouselButton").children("span").removeClass('fa-play');
+                        $("#carouselButton").children("span").addClass('fa-pause');                    
                     }
                 });
                 $('#loginButton').click(function() { $('#loginModal').modal('show');});

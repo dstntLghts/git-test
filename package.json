@@ -21,6 +21,6 @@
   "homepage": "https://github.com/dstntLghts/git-test#readme",
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.14.1"
   }
 }
