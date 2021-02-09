@@ -23,9 +23,16 @@
   "homepage": "https://github.com/dstntLghts/git-test#readme",
   "devDependencies": {
     "lite-server": "^2.6.1",
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
   },
   "dependencies": {
-    "fix": "0.0.6"
+    "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "fix": "0.0.6",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
   }
 }
