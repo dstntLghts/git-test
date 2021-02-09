@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap/dist/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="Bootstrap4/conFusion/node_modules/bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="Bootstrap4/conFusion/css/styles.css">
     </head>
 
     <body>
         <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
             <div class="container">
-                  <a class="navbar-brand mr-auto" href="#"><img src="/Bootstrap4/conFusion/logo.png" height="30" width="40"></a>
+                  <a class="navbar-brand mr-auto" href="#"><img src="/Bootstrap4/conFusion/img/logo.png" height="30" width="40"></a>
                   <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
@@ -76,7 +76,7 @@
                         <p>We take inspirtation from the worlds bests cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                     </div>
                     <div class="col-12 col-sm align-self-center">
-                        <img src="/Bootstrap4/conFusion/logo.png" class="img-fluid">
+                        <img src="/Bootstrap4/conFusion/img/logo.png" class="img-fluid">
                     </div>
                     <div class="col-12 col-sm aligh-self-center">
                         <button type="submit" id="reserveButton" class="btn btn-block nav-link btn-warning">
@@ -217,7 +217,7 @@
                             <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
                             <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person.</p>
                         </div>
-                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="/Bootstrap4/conFusion/buffet.png">    
+                        <img class="d-flex mr-3 img-thumbnail align-self-center" src="/Bootstrap4/conFusion/img/buffet.png">    
                     </div>    
                 </div>
             </div>
@@ -227,7 +227,7 @@
                 </div>
                 <div class="col col-sm order-sm-first col-md">
                     <div class="media">
-                        <img class="d-flex mr-3 img-thumbnail aligh-self-center" src="/Bootstrap4/conFusion/alberto.png" alt="alberto">
+                        <img class="d-flex mr-3 img-thumbnail aligh-self-center" src="/Bootstrap4/conFusion/img/alberto.png" alt="alberto">
                         <div class ="media-body">
                             <h2 class="mt-0">Alberto Somayya</h2>
                             <h4>Executive Chef</h4>
@@ -282,24 +282,6 @@
         <script src="Bootstrap4/conFusion/node_modules/jquery/dist/jquery.slim.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="Bootstrap4/conFusion/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#mycarousel").carousel( { interval: 2000 } );
-                $("#carouselButton").click(function() {
-                    if ($("#carouselButton").children("span").hasClass('fa-pause')) {
-                        $("#mycarousel").carousel('pause');
-                        $("#carouselButton").children("span").removeClass('fa-pause');
-                        $("#carouselButton").children("span").addClass('fa-play');
-                    }
-                    else if ($("#carouselButton").children("span").hasClass('fa-play')){
-                        $("#mycarousel").carousel('cycle');
-                        $("#carouselButton").children("span").removeClass('fa-play');
-                        $("#carouselButton").children("span").addClass('fa-pause');                    
-                    }
-                });
-                $('#loginButton').click(function() { $('#loginModal').modal('show');});
-                $('#reserveButton').click(function() { $('#reserveModal').modal('show');});
-            });
-        </script>
+        <script src="/Bootstrap4/conFusion/js/scripts.js"></script>
     </body>
 </html>

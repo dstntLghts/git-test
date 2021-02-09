@@ -4,10 +4,12 @@
   "description": "\"This is a test directory to learn Git and Node\"",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
-    "scss": "node-sass -o css/ css/"
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange 'css/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
   "devDependencies": {
     "lite-server": "^2.6.1",
     "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "fix": "0.0.6"
   }
 }
