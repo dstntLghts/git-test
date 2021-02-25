@@ -42,11 +42,9 @@ class DishDetail extends Component {
             )
             
             return(
-                <div className="col-12 col-md-5 m-1">
-                    <div><h3>Comments</h3></div>
-                    <div>
-                        {allcomments}
-                    </div>
+                <div className="container col-12 col-md-5 m-1">
+                    <h3>Comments</h3>
+                    {allcomments}
                 </div>
             )
         }
@@ -59,11 +57,9 @@ class DishDetail extends Component {
     render() {
 
         return(
-            <div className="container">
-                <div className="row">
-                    {this.renderDish(this.props.data)}
-                    {this.renderComments(this.props.data)}
-                </div>
+            <div className="row">
+                {this.renderDish(this.props.data)}
+                {this.renderComments(this.props.data)}
             </div>
         );
     }
