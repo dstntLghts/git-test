@@ -30,7 +30,7 @@ class Main extends Component {
         </Navbar>
         <Menu dishes={this.state.dishes}
             onClick={(dishId) => this.onDishSelect(dishId)}/>
-        <DishDetail data={this.state.dishes.filter((dish) => dish.id===this.state.selectedDish)[0]} />
+        <DishDetail dish={this.state.dishes.filter((dish) => dish.id===this.state.selectedDish)[0]} />
       </div>
     );
   }
