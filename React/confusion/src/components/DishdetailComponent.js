@@ -1,19 +1,31 @@
 import React from 'react';
-import {Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reactstrap';
-
-    function RenderDish({dish}) {
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
+    
+function RenderDish({dish}) {
         
         if (dish!= null) {
             return(
-                <div className="col-12 col-md-5 m-1">
-                    <Card>
-                        <CardImg width="30%" src={dish.image} alt={dish.name}/>
-                        <CardBody>
-                            <CardTitle>{dish.name}</CardTitle>
-                            <CardText>{dish.description}</CardText>
-                        </CardBody>
-                    </Card>
-                </div>
+                <div class="container">
+                    <div className="row">
+                        <Breadcrumb>
+                            <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
+                            <BreadcrumbItem active>{dish.name}</BreadcrumbItem>
+                        </Breadcrumb>
+                        <div className="col-12">
+                            <h3>{dish.name}</h3>
+                        </div>
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        <Card>
+                            <CardImg width="30%" src={dish.image} alt={dish.name}/>
+                            <CardBody>
+                                <CardTitle>{dish.name}</CardTitle>
+                                <CardText>{dish.description}</CardText>
+                            </CardBody>
+                        </Card>
+                    </div>
+                </div>    
             )
         }
         else {
@@ -26,7 +38,7 @@ import {Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reac
     function RenderComments({dish}) {
         if (dish != null) {
 
-            const allcomments=dish.comments.map((sub) =>
+            const allcomments=dish.map((sub) =>
             {
             return(
                 <div>
@@ -37,9 +49,13 @@ import {Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reac
             )
             
             return(
-                <div className="container col-12 col-md-5 m-1">
-                    <h3>Comments</h3>
-                    {allcomments}
+                <div class="container">
+                    <div className="row">
+                        <div className="container col-12 col-md-5 m-1">
+                            <h3>Comments</h3>
+                            {allcomments}
+                        </div>
+                    </div>
                 </div>
             )
         }
@@ -51,12 +67,21 @@ import {Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reac
 
     const DishDetail = (props) => {
          
-        return(
-             <div className="container">
+        return (
+            <div className="container">
                 <div className="row">
+                    {/* <Breadcrumb>
+                        <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>{props.dish.name}</h3>
+                        <hr />
+                    </div>  */}
                     <RenderDish dish={props.dish} />
-                    <RenderComments dish={props.dish}/>
+                    <RenderComments dish={props.comments} />               
                 </div>
+                    
             </div>
         );
     }
