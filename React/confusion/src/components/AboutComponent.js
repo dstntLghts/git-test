@@ -1,65 +1,32 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody,CardImg, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
+function RenderMenuItem({mate, onClick}) {
+
+        return (
+            <Card> 
+                <CardImg width="100" src={mate.image} alt={mate.name}/>
+                <CardHeader>{mate.name}</CardHeader>
+                <CardBody className="bg-faded">
+                    <blockquote className="blockquote">
+                            <p className="mb-0">{mate.designation}</p>
+                    </blockquote>
+                <p>{mate.description}</p>
+                </CardBody>
+            </Card>
+        );
+    }
 
 function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <p>Leader {leader.name}</p>
+            <RenderMenuItem mate={leader} />
         );
     });
 
-    // function RenderMenuItem({mate, onClick}) {
-
-    //     return (
-    //         <Card>
-    //             <Link to={`/menu/${mate.id}`} >
-
-
-    //                     fix this 
-    //                     <div class="card">
-    //                         <div class="card-header" role="tab" id="peterceo">
-    //                             <h3 class="mb-0">
-    //                                 <a data-toggle="collapse" data-target="#peter">
-    //                                     Peter Pan <small>Chief Epicurious Officer</small>
-    //                                 </a>
-    //                             </h3>
-    //                         </div>
-    //                         <div class="collapse" id="peter" data-parent="#accordion">  
-    //                             <div class="card-body">
-    //                                 <p class="d-none d-sm-block">Our CEO, Peter, credits his hardworking East Asian immigrant parents who undertook the arduous journey to the shores of America with the intention of giving their children the best future. His mother's wizardy in the kitchen whipping up the tastiest dishes with whatever is available inexpensively at the supermarket, was his first inspiration to create the fusion cuisines for which <em>The Frying Pan</em> became well known. He brings his zeal for fusion cuisines to this restaurant, pioneering cross-cultural culinary connections.</p>
-    //                             </div>    
-    //                         </div>
-    //                     </div>
-
-
-                    //      like:
-                    //      <div className="col-12">
-                    //      <Card>
-                    //          <CardBody className="bg-faded">
-                    //              <blockquote className="blockquote">
-                    //                  <p className="mb-0">You better cut the pizza in four pieces because
-                    //                      I'm not hungry enough to eat six.</p>
-                    //                  <footer className="blockquote-footer">Yogi Berra,
-                    //                  <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
-                    //                      P. Pepe, Diversion Books, 2014</cite>
-                    //                  </footer>
-                    //              </blockquote>
-                    //          </CardBody>
-                    //      </Card>
-                    //  </div>
-
-
-    //                 <CardImg width="100%" src={dish.image} alt={dish.name} />
-    //                 <CardImgOverlay>
-    //                     <CardTitle>{dish.name}</CardTitle>
-    //                 </CardImgOverlay>
-    //             </Link>
-    //         </Card>
-    //     );
-    // }
-
+    
     return(
         <div className="container">
             <div className="row">
