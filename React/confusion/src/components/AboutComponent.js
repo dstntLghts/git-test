@@ -1,21 +1,25 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody,CardImg, CardHeader, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderMenuItem({mate, onClick}) {
+function RenderMenuItem({mate}) {
 
-        return (
-            <Card> 
-                <CardImg width="100" src={mate.image} alt={mate.name}/>
-                <CardHeader>{mate.name}</CardHeader>
-                <CardBody className="bg-faded">
-                    <blockquote className="blockquote">
-                            <p className="mb-0">{mate.designation}</p>
-                    </blockquote>
-                <p>{mate.description}</p>
-                </CardBody>
-            </Card>
-        );
+    var imgStyle = {
+        minWidth: "30px",
+     };
+     
+    return (
+        <Media>
+            <Media style={imgStyle} object src={mate.image} alt={mate.image} />
+            <Media body>
+                <Media heading>
+                        <h3>{mate.name}</h3>
+                </Media>
+                <h5>{mate.designation}</h5>
+                <h6>{mate.description}</h6>
+            </Media>
+        </Media>
+    );
     }
 
 function About(props) {
