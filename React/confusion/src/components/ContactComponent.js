@@ -1,28 +1,13 @@
 import React, {Component} from 'react';
 import {Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, FormFeedback, Label, Input, Col} from 'reactstrap';
 import {Link} from 'react-router-dom';
+import {Control, LocalForm, Errors} from 'react-redux-form';
 
 class Contact extends Component {
 
     constructor(props){
 
         super(props);
-
-        this.state= {
-            firstname:'',
-            lastname:'',
-            telnum:'',
-            email:'',
-            agree: false,
-            contactType:'Tel.',
-            message:'',
-            touched: {
-                firstname: false,
-                lastname: false,
-                telnum: false,
-                email: false
-            }
-        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
