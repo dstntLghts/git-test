@@ -154,7 +154,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
         
         if (dish!= null) {
             return(
-                <div class="container">
+                <div class="col-12 col-md-5 m-1">
                     <div className="row">
                         <Breadcrumb>
                             <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
@@ -197,16 +197,12 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
             )
             
             return(
-                <div class="container">
-                    <div className="row">
-                        <div className="container col-12 col-md-5 m-1">
-                            <h3>Comments</h3>
-                            {allcomments}
-                            <Button outline >
-                                 <span className="fa fa-pencil fa-lg">Submit Comment</span>
-                            </Button> 
-                        </div>
-                    </div>
+                <div className="col-sm col-12 col-md-5 m-1">
+                    <h3>Comments</h3>
+                    {allcomments}
+                    <Button outline >
+                        <span className="fa fa-pencil fa-lg">Submit Comment</span>
+                    </Button> 
                 </div>
             )
         }
@@ -221,10 +217,9 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
         return (
             <div className="container">
                 <div className="row">
-                    <RenderDish dish={props.dish} />
-                    <RenderComments dish={props.comments} />               
-                </div>
-                    
+                    <RenderDish dish={props.dish} /> 
+                    <RenderComments dish={props.comments} /> 
+                </div>               
             </div>
         );
     }
