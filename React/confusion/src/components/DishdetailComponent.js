@@ -3,14 +3,14 @@ import { Breadcrumb, BreadcrumbItem, Button, Col, Card, CardImg, CardText, CardB
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 
-    // function commentForm() {
+    function CommentForm() {
     //     const required = (val) => val && val.length;
     //     const maxLength = (len) => (val) => !(val) || (val.length <= len);
     //     const minLength = (len) => (val) => val && (val.length >= len);
     //     const isNumber = (val) => !isNaN(Number(val));
     //     const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
     
-    //     return(
+            return(
     //         <React.Fragment> 
     //             <div className="container">
     //                 <Button outline onClick={this.toggleModal}>
@@ -148,7 +148,13 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
     //             </Modal>
     //         </React.Fragment>
     //     );
-    // }
+            <div>
+                <Button outline >
+                        <span className="fa fa-pencil fa-lg">Submit Comment</span>
+                </Button>
+            </div>
+        )
+    }
 
     function RenderDish({dish}) {
         
@@ -182,6 +188,13 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
     function RenderComments({dish}) {
         if (dish != null) {
 
+            const commentForm = () => {
+                <div>
+                    <h3>Comments</h3>
+                    
+                </div>
+            }
+
             const allcomments=dish.map((sub) =>
             {
             return(
@@ -196,9 +209,6 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
                 <div>
                     <h3>Comments</h3>
                     {allcomments}
-                    <Button outline >
-                        <span className="fa fa-pencil fa-lg">Submit Comment</span>
-                    </Button> 
                 </div>
             )
         }
@@ -217,7 +227,8 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
                         <RenderDish dish={props.dish} /> 
                     </div> 
                     <div className="col-sm col-12 col-md-5 m-1">
-                        <RenderComments dish={props.comments} />   
+                        <RenderComments dish={props.comments} />  
+                        <CommentForm/> 
                     </div> 
                 </div>
             </div>
