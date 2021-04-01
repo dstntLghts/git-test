@@ -154,25 +154,21 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
         
         if (dish!= null) {
             return(
-                <div class="col-12 col-md-5 m-1">
-                    <div className="row">
-                        <Breadcrumb>
-                            <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>{dish.name}</BreadcrumbItem>
-                        </Breadcrumb>
-                        <div className="col-12">
-                            <h3>{dish.name}</h3>
-                        </div>
+                <div>
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{dish.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>{dish.name}</h3>
                     </div>
-                    <div className="col-12 col-md-5 m-1">
-                        <Card>
-                            <CardImg width="30%" src={dish.image} alt={dish.name}/>
-                            <CardBody>
-                                <CardTitle>{dish.name}</CardTitle>
-                                <CardText>{dish.description}</CardText>
-                            </CardBody>
-                        </Card>
-                    </div>
+                    <Card>
+                        <CardImg width="30%" src={dish.image} alt={dish.name}/>
+                        <CardBody>
+                            <CardTitle>{dish.name}</CardTitle>
+                            <CardText>{dish.description}</CardText>
+                        </CardBody>
+                    </Card>
                 </div>    
             )
         }
@@ -197,7 +193,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
             )
             
             return(
-                <div className="col-sm col-12 col-md-5 m-1">
+                <div>
                     <h3>Comments</h3>
                     {allcomments}
                     <Button outline >
@@ -217,9 +213,13 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
         return (
             <div className="container">
                 <div className="row">
-                    <RenderDish dish={props.dish} /> 
-                    <RenderComments dish={props.comments} /> 
-                </div>               
+                    <div className="col-sm col-12 col-md-5 m-1">
+                        <RenderDish dish={props.dish} /> 
+                    </div> 
+                    <div className="col-sm col-12 col-md-5 m-1">
+                        <RenderComments dish={props.comments} />   
+                    </div> 
+                </div>
             </div>
         );
     }
