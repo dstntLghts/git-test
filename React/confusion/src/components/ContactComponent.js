@@ -15,6 +15,7 @@ class Contact extends Component {
 
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     handleSubmit(values) {
