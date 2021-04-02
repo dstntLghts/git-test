@@ -24,7 +24,7 @@ class DishDetail extends Component {
 
     render() {
 
-        const CommentForm() {
+        const CommentForm = () => {
 
             return(
                 <React.Fragment>
@@ -174,7 +174,7 @@ class DishDetail extends Component {
         //         </React.Fragment>
         //     );
 
-        const RenderDish({dish}) {
+        const RenderDish= ({dish}) => {
             
             if (dish!= null) {
                 return(
@@ -203,7 +203,7 @@ class DishDetail extends Component {
             }
         }
 
-        const RenderComments({dish}) {
+        const RenderComments= ({dish}) => {
             if (dish != null) {
 
                 const commentForm = () => {
@@ -240,10 +240,10 @@ class DishDetail extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-sm col-12 col-md-5 m-1">
-                        <RenderDish dish={props.dish} /> 
+                        <RenderDish dish={this.props.dish} /> 
                     </div> 
                     <div className="col-sm col-12 col-md-5 m-1">
-                        <RenderComments dish={props.comments} />  
+                        <RenderComments dish={this.props.comments} />  
                         <CommentForm/> 
                     </div> 
                 </div>
