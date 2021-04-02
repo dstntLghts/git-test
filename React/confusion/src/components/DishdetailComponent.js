@@ -6,8 +6,6 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
-const isNumber = (val) => !isNaN(Number(val));
-const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val); 
 
 class DishDetail extends Component {
 
@@ -87,7 +85,7 @@ class DishDetail extends Component {
                                     <Row className="form-group">
                                         <Col md={{size:10, offset: 2}}>
                                             <Button type="submit" color="primary">
-                                            Send Feedback
+                                            Submit
                                             </Button>
                                         </Col>
                                     </Row>

@@ -23,6 +23,12 @@ class Contact extends Component {
         alert('Current State is: ' + JSON.stringify(values));
     }
 
+    toggleModal(){
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
     render() {
 
         return(
