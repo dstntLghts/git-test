@@ -32,7 +32,7 @@ class DishDetail extends Component {
 
     render() {
 
-        const CommentForm = ({addComment, dishId}) => {
+        const CommentForm = () => {
 
             return(
                 <React.Fragment>
@@ -44,57 +44,57 @@ class DishDetail extends Component {
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} >
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                         <ModalBody>
-                        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                                    <Row className="form-group">
-                                        <Label htmlFor="rating" md={2}>Your Rating</Label>
-                                        <Col md={10}>
-                                            <Control.select model=".rating" id="rating" name="rating"
-                                                placeholder="Your Rating" className="form-control">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                            </Control.select>
-                                        </Col>
-                                    </Row>
-                                    <Row className="form-group">
-                                        <Label htmlFor="yourname" md={2}>Your Name</Label>
-                                        <Col md={10}>
-                                            <Control.text model=".author" id="author" name="author"
-                                                placeholder="Your Name"
-                                                className="form-control"
-                                                validators={{
-                                                    required, minLength: minLength(3), maxLength: maxLength(15)
-                                                }}
+                            <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+                                        <Row className="form-group">
+                                            <Label htmlFor="rating" md={2}>Your Rating</Label>
+                                            <Col md={10}>
+                                                <Control.select model=".rating" id="rating" name="rating"
+                                                    placeholder="Your Rating" className="form-control">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                </Control.select>
+                                            </Col>
+                                        </Row>
+                                        <Row className="form-group">
+                                            <Label htmlFor="yourname" md={2}>Your Name</Label>
+                                            <Col md={10}>
+                                                <Control.text model=".author" id="author" name="author"
+                                                    placeholder="Your Name"
+                                                    className="form-control"
+                                                    validators={{
+                                                        required, minLength: minLength(3), maxLength: maxLength(15)
+                                                    }}
+                                                    />
+                                                    <Errors
+                                                    className="text-danger"
+                                                    model=".lastname"
+                                                    show="touched"
+                                                    messages={{
+                                                        required: 'Required',
+                                                        minLength: 'Must be greater than 2 characters',
+                                                        maxLength: 'Must be 15 characters or less'
+                                                    }}
                                                 />
-                                                <Errors
-                                                className="text-danger"
-                                                model=".lastname"
-                                                show="touched"
-                                                messages={{
-                                                    required: 'Required',
-                                                    minLength: 'Must be greater than 2 characters',
-                                                    maxLength: 'Must be 15 characters or less'
-                                                }}
-                                             />
-                                        </Col>
-                                    </Row>
-                                    <Row className="form-group">
-                                        <Label htmlFor="comment" md={2}>Comment</Label>
-                                        <Col md={10}>
-                                            <Control.textarea model=".comment" id="comment" name="comment"
-                                                rows="6"
-                                                className="form-control" />
-                                        </Col>
-                                    </Row>
-                                    <Row className="form-group">
-                                        <Col md={{size:10, offset: 2}}>
-                                            <Button type="submit" color="primary">
-                                            Submit
-                                            </Button>
-                                        </Col>
-                                    </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row className="form-group">
+                                            <Label htmlFor="comment" md={2}>Comment</Label>
+                                            <Col md={10}>
+                                                <Control.textarea model=".comment" id="comment" name="comment"
+                                                    rows="6"
+                                                    className="form-control" />
+                                            </Col>
+                                        </Row>
+                                        <Row className="form-group">
+                                            <Col md={{size:10, offset: 2}}>
+                                                <Button type="submit" color="primary">
+                                                Submit
+                                                </Button>
+                                            </Col>
+                                        </Row>
                             </LocalForm>
                         </ModalBody>
                     </Modal>                  
@@ -102,23 +102,23 @@ class DishDetail extends Component {
             )
         }
 
-        const RenderDish= ({dish}) => {
+        const RenderDish= (props) => {
             
-            if (dish!= null) {
+            if (props.dish!= null) {
                 return(
                     <div>
                         <Breadcrumb>
                             <BreadcrumbItem><Link to='/menu'>Menu</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>{dish.name}</BreadcrumbItem>
+                            <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                         </Breadcrumb>
                         <div className="col-12">
-                            <h3>{dish.name}</h3>
+                            <h3>{props.dish.name}</h3>
                         </div>
                         <Card>
-                            <CardImg width="30%" src={dish.image} alt={dish.name}/>
+                            <CardImg width="30%" src={props.dish.image} alt={props.dish.name}/>
                             <CardBody>
-                                <CardTitle>{dish.name}</CardTitle>
-                                <CardText>{dish.description}</CardText>
+                                <CardTitle>{props.dish.name}</CardTitle>
+                                <CardText>{props.dish.description}</CardText>
                             </CardBody>
                         </Card>
                     </div>    
@@ -131,8 +131,8 @@ class DishDetail extends Component {
             }
         }
 
-        const RenderComments= ({dish, addComment, dishId}) => {
-            if (dish != null) {
+        const RenderComments= (props) => {
+            if (props.dish != null) {
 
                 const commentForm = () => {
                     <div>
@@ -141,7 +141,7 @@ class DishDetail extends Component {
                     </div>
                 }
 
-                const allcomments=dish.map((sub) =>
+                const allcomments=props.dish.map((sub) =>
                 {
                 return(
                     <div>
@@ -156,7 +156,7 @@ class DishDetail extends Component {
                         <h3>Comments</h3>
                         {allcomments}
                         <div className="container">
-                             <CommentForm dishId={dishId} addComment={addComment} />
+                             <CommentForm/>
                         </div>
                     </div>
                 )
@@ -174,7 +174,7 @@ class DishDetail extends Component {
                         <RenderDish dish={this.props.dish} /> 
                     </div> 
                     <div className="col-sm col-12 col-md-5 m-1">
-                        <RenderComments dish={this.props.comments} addComment={this.props.addComment} dishId={this.props.dish.id}/>  
+                        <RenderComments dish={this.props.comments}/>  
                     </div> 
                 </div>
             </div>
