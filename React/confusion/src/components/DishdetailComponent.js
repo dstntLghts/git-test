@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, Button, Col, Card, CardImg, CardText, CardB
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
+import {baseUrl} from '../shared/baseUrl';
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
@@ -133,7 +134,7 @@ class DishDetail extends Component {
                             <h3>{props.dish.name}</h3>
                         </div>
                         <Card>
-                            <CardImg width="30%" src={props.dish.image} alt={props.dish.name}/>
+                            <CardImg width="30%" src={baseUrl + props.dish.image} alt={props.dish.name}/>
                             <CardBody>
                                 <CardTitle>{props.dish.name}</CardTitle>
                                 <CardText>{props.dish.description}</CardText>
