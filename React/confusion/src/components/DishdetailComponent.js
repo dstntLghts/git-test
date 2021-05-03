@@ -10,11 +10,11 @@ const minLength = (len) => (val) => val && (val.length >= len);
 
 class DishDetail extends Component {
 
-    constructor(props){
-
+    constructor(props) {
         super(props);
         this.state = {
-            isModalOpen: false
+            isModalOpen: false,
+            dishId: this.props.dishId
         };
         this.toggleModal = this.toggleModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,7 @@ class DishDetail extends Component {
 
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.comment, values.author);
     }
 
     render() {
@@ -37,31 +37,29 @@ class DishDetail extends Component {
 
             return(
                 <React.Fragment>
-                    <div className="container">
-                        <Button outline onClick={this.toggleModal}>
-                                <span className="fa fa-pencil fa-lg">Submit Comment</span>
-                        </Button>
-                    </div>
+                    <Button outline onClick={this.toggleModal}>
+                        <span className="fa fa-pencil fa-lg">Submit Comment</span>
+                    </Button>
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} >
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                         <ModalBody>
                             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                                         <Row className="form-group">
-                                            <Label htmlFor="rating" md={2}>Your Rating</Label>
-                                            <Col md={10}>
+                                            <Col>
+                                                <Label htmlFor="rating">Your Rating</Label>
                                                 <Control.select model=".rating" id="rating" name="rating"
                                                     placeholder="Your Rating" className="form-control">
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
                                                 </Control.select>
                                             </Col>
                                         </Row>
                                         <Row className="form-group">
-                                            <Label htmlFor="yourname" md={2}>Your Name</Label>
-                                            <Col md={10}>
+                                            <Col>
+                                                <Label htmlFor="author">Your Name</Label>
                                                 <Control.text model=".author" id="author" name="author"
                                                     placeholder="Your Name"
                                                     className="form-control"
@@ -71,7 +69,7 @@ class DishDetail extends Component {
                                                     />
                                                     <Errors
                                                     className="text-danger"
-                                                    model=".lastname"
+                                                    model=".author"
                                                     show="touched"
                                                     messages={{
                                                         required: 'Required',
@@ -82,20 +80,13 @@ class DishDetail extends Component {
                                             </Col>
                                         </Row>
                                         <Row className="form-group">
-                                            <Label htmlFor="comment" md={2}>Comment</Label>
-                                            <Col md={10}>
-                                                <Control.textarea model=".comment" id="comment" name="comment"
-                                                    rows="6"
+                                            <Col>
+                                                <Label htmlFor="comment">Comment</Label>
+                                                <Control.textarea model=".comment" id="comment" name="comment" rows="6"
                                                     className="form-control" />
                                             </Col>
                                         </Row>
-                                        <Row className="form-group">
-                                            <Col md={{size:10, offset: 2}}>
-                                                <Button type="submit" color="primary">
-                                                Submit
-                                                </Button>
-                                            </Col>
-                                        </Row>
+                                        <Button type="submit" color="primary" >Submit</Button>
                             </LocalForm>
                         </ModalBody>
                     </Modal>                  
@@ -153,13 +144,6 @@ class DishDetail extends Component {
         const RenderComments= (props) => {
             if (props.dish != null) {
 
-                const commentForm = () => {
-                    <div>
-                        <h3>Comments</h3>
-                        
-                    </div>
-                }
-
                 const allcomments=props.dish.map((sub) =>
                 {
                 return(
@@ -175,7 +159,7 @@ class DishDetail extends Component {
                         <h3>Comments</h3>
                         {allcomments}
                         <div className="container">
-                             <CommentForm/>
+                            <CommentForm/>
                         </div>
                     </div>
                 )
