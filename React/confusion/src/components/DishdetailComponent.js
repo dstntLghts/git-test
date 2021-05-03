@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import {baseUrl} from '../shared/baseUrl';
+import {FadeTransform, Fade, Stagger} from 'react-animation-components';
+
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
@@ -124,13 +126,15 @@ class DishDetail extends Component {
                         <div className="col-12">
                             <h3>{props.dish.name}</h3>
                         </div>
-                        <Card>
-                            <CardImg width="30%" src={baseUrl + props.dish.image} alt={props.dish.name}/>
-                            <CardBody>
-                                <CardTitle>{props.dish.name}</CardTitle>
-                                <CardText>{props.dish.description}</CardText>
-                            </CardBody>
-                        </Card>
+                        <FadeTransform in transformProps={{exitTransform: 'scale(0.5) transleteY(-50%)'}}>
+                            <Card>
+                                <CardImg width="30%" src={baseUrl + props.dish.image} alt={props.dish.name}/>
+                                <CardBody>
+                                    <CardTitle>{props.dish.name}</CardTitle>
+                                    <CardText>{props.dish.description}</CardText>
+                                </CardBody>
+                            </Card>
+                        </FadeTransform>
                     </div>    
                 )
             }
@@ -147,20 +151,24 @@ class DishDetail extends Component {
                 const allcomments=props.dish.map((sub) =>
                 {
                 return(
+                    <Fade in>
                     <div>
                         <ul>{sub.comment}</ul>
                         <ul> -- {sub.author}, {new Intl.DateTimeFormat('en-US',{year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(sub.date)))}</ul>
                     </div>
+                    </Fade>
                     )}
                 )
                 
                 return(
                     <div>
                         <h3>Comments</h3>
-                        {allcomments}
-                        <div className="container">
-                            <CommentForm/>
-                        </div>
+                        <Stagger in>
+                            {allcomments}
+                            <div className="container">
+                                <CommentForm/>
+                            </div>
+                        </Stagger>
                     </div>
                 )
             }
