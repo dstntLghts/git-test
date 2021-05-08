@@ -1,36 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {Loading} from './LoadingComponent';
+import {baseUrl} from '../shared/baseUrl';
+import {FadeTransform, Fade, Stagger} from 'react-animation-components';
 
-function RenderMenuItem({mate}) {
-
-    var imgStyle = {
-        minWidth: "30px",
-     };
-     
-    return (
-        <Media>
-            <Media style={imgStyle} object src={mate.image} alt={mate.image} />
-            <Media body>
-                <Media heading>
-                        <h3>{mate.name}</h3>
-                </Media>
-                <h5>{mate.designation}</h5>
-                <h6>{mate.description}</h6>
-            </Media>
-        </Media>
-    );
+function RenderMenuItem({item, isLoading, errMess}) {
+   
+    if (isLoading) {
+        return(<Loading />)
     }
-
-function About(props) {
-
-    const leaders = props.leaders.map((leader) => {
-        return (
-            <RenderMenuItem mate={leader} />
+    else if (errMess) {
+        return(<h4>{errMess}</h4>);
+    }
+    else
+        return(
+            <FadeTransform in transformProps={{exitTransform:'scale(0.5) transleteY(-50%)'}}>
+                <Media>
+                    <Media  src={baseUrl + item.image} alt={item.name}/>
+                    <Media body>
+                        <Media>{item.name}</Media>
+                        {item.designation ? <Media>{item.designation}</Media> : null}
+                        <Media>{item.description}</Media>
+                    </Media>
+                </Media>
+            </FadeTransform>
         );
-    });
+}
 
-    
+function About (props) {
+
+    const alleaders = props.leaders.map((sub) => 
+    {
+     return (<RenderMenuItem item={sub.leaders} isLoading={sub.leadersLoading} errMess={sub.leadersErrMess} />);
+    })
+
     return(
         <div className="container">
             <div className="row">
@@ -87,7 +91,7 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        {leaders}
+                        {alleaders}
                     </Media>
                 </div>
             </div>
