@@ -12,7 +12,7 @@ function RenderMenuItem({item, isLoading, errMess}) {
       };
    
     if (isLoading) {
-        return(<Loading />)
+        return(<Loading />);
     }
     else if (errMess) {
         return(<h4>{errMess}</h4>);
@@ -26,7 +26,7 @@ function RenderMenuItem({item, isLoading, errMess}) {
                         <Media heading>
                             {item.name}
                         </Media>
-                        {item.designation ? <Media>{item.designation}</Media> : null}
+                            {item.designation ? <Media>{item.designation}</Media> : null}
                         <Media>{item.description}</Media>
                     </Media>
                 </Media>
