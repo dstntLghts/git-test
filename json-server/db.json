@@ -209,6 +209,30 @@
       "comment": "LOL, we're gonna party!",
       "author": "Charis",
       "date": "2021-05-04T17:57:28.556094Z"
+    },
+    {
+      "dishId": "Charalabos",
+      "rating": "Tzeranis",
+      "comment": "2106080057",
+      "author": "sk8grr@gmail.com",
+      "date": "2021-05-09T18:46:07.210Z",
+      "id": 21
+    },
+    {
+      "dishId": "ddd",
+      "rating": "aaaa",
+      "comment": "1234567891",
+      "author": "ctzeranis@gmail.com",
+      "date": "2021-05-09T18:46:45.653Z",
+      "id": 22
+    },
+    {
+      "dishId": "LOL",
+      "rating": "LOL",
+      "comment": "987654311",
+      "author": "ctzeranis@gmail.com",
+      "date": "2021-05-09T18:52:35.666Z",
+      "id": 23
     }
   ],
   "promotions": [
@@ -262,15 +286,26 @@
   ],
   "feedback": [
     {
-      "firstname": "fdas",
-      "lastname": "afds",
-      "telnum": "134113",
-      "email": "dafdads@daffas.dfdafd",
+      "firstname": "Charis",
+      "lastname": "Tze",
+      "telnum": "306977512784",
+      "email": "sk8grr@gmail.com",
       "agree": true,
       "contactType": "Email",
-      "message": "afadsfds",
+      "message": "Lol",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Alekos",
+      "lastname": "Palekso",
+      "telnum": "123456789",
+      "email": "ctzeranis@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Lol ddasdd fdfdsfds",
+      "date": "2021-05-09T19:01:31.607Z",
+      "id": 2
     }
   ]
 }
